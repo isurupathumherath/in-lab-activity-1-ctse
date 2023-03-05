@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "303510216622",
+    "project_id": "in-lab-activity-reciept-app",
+    "storage_bucket": "in-lab-activity-reciept-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303510216622:android:3834d3a24f9106a4c9f23f",
+        "android_client_info": {
+          "package_name": "com.example.lab_activity_recipes_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303510216622-fu83n87t4l5qq5mlkfa2kbl0ktkfn897.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA35QSr2NZbdgOs6BhAtyTbpdjnEBl-GEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303510216622-fu83n87t4l5qq5mlkfa2kbl0ktkfn897.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
