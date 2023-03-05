@@ -6,6 +6,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import '../model/recipe.dart';
 
 class RecipeForm extends StatefulWidget {
+  const RecipeForm({super.key});
+
   @override
   _RecipeFormState createState() => _RecipeFormState();
 }
@@ -14,7 +16,7 @@ class _RecipeFormState extends State<RecipeForm> {
   final _formKey = GlobalKey<FormState>();
   String? _title;
   String? _description;
-  List<String> _ingredients = [];
+  final List<String> _ingredients = [];
 
   void _submitForm() async {
     if (_formKey.currentState!.validate()) {
@@ -28,13 +30,7 @@ class _RecipeFormState extends State<RecipeForm> {
       } else {
         Navigator.pushNamed(context, '/login');
       }
-      String id = (new DateTime.now().millisecondsSinceEpoch).toString();
-      Recipe recipe = Recipe(
-          id: id,
-          title: _title,
-          description: _description,
-          ingredients: [],
-          email: email);
+      String id = (DateTime.now().millisecondsSinceEpoch).toString();
       final recipeItem =
           FirebaseFirestore.instance.collection('recipes').doc(id);
 
@@ -55,7 +51,7 @@ class _RecipeFormState extends State<RecipeForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Recipe'),
+        title: const Text('Create Recipe'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -64,7 +60,7 @@ class _RecipeFormState extends State<RecipeForm> {
           child: ListView(
             children: [
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Title',
                   hintText: 'Enter the recipe title',
                 ),
@@ -79,7 +75,7 @@ class _RecipeFormState extends State<RecipeForm> {
                 },
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Description',
                   hintText: 'Enter the recipe description',
                 ),
@@ -93,8 +89,8 @@ class _RecipeFormState extends State<RecipeForm> {
                   _description = value;
                 },
               ),
-              SizedBox(height: 16),
-              Text('Ingredients'),
+              const SizedBox(height: 16),
+              const Text('Ingredients'),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: _ingredients.length,
@@ -116,10 +112,10 @@ class _RecipeFormState extends State<RecipeForm> {
                   );
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _submitForm,
-                child: Text('Create Recipe'),
+                child: const Text('Create Recipe'),
               ),
             ],
           ),

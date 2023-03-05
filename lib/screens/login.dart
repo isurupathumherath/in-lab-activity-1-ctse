@@ -15,26 +15,26 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login - Recipe App"),
+        title: const Text("Login - Recipe App"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Recipe App - In-Lab Activity",
               style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.green),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: TextField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: "Enter your email address...",
                       alignLabelWithHint: true),
                   onChanged: _onEmailAddressChange),
@@ -43,32 +43,32 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
               padding: const EdgeInsets.all(25.0),
               child: TextField(
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     hintText: "Enter your password...",
                     alignLabelWithHint: true),
                 onChanged: _onPasswordChange,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25.0,
             ),
             ElevatedButton(
               // style: ButtonStyle(backgroundColor: Color.fromARGB(255, 95, 223, 57)),
               onPressed: () => _loginCallback(loginToAccount()),
-              child: Text(
+              child: const Text(
                 "Log Me In",
                 style: TextStyle(
                   fontSize: 25.0,
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25.0,
             ),
             ElevatedButton(
               style: ButtonStyle(),
               onPressed: () => _registerCallback(registerNewAccount()),
-              child: Text(
+              child: const Text(
                 "Create an Account",
                 style: TextStyle(
                   fontSize: 15.0,
